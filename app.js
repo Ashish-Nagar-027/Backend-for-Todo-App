@@ -1,12 +1,16 @@
+require("dotenv").config();
 const express = require("express");
-
+const tasks = require("./routes/tasks");
+const connectToDB = require("./config/db");
 const app = express();
 
-const port = 3000;
+// Middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-// routes
-app.get("/hello", (req, res) => {
-  res.send("Todo app backend");
-});
+// connect to database
+connectToDB();
 
-app.listen(port, console.log(`Server is listening at port ${port}...`));
+app.get("/", tasks);
+
+module.exports = app;
