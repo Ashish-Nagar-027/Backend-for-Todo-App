@@ -83,9 +83,6 @@ const deleteTask = async (req, res) => {
   }
 };
 
-// https://www.youtube.com/watch?v=Wc1ciwSNUfM&ab_channel=B2Tech
-// https://www.youtube.com/watch?v=686pbLyBbGI&ab_channel=B2Tech
-
 module.exports = {
   home,
   createTask,
