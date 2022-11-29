@@ -11,6 +11,6 @@ app.use(express.urlencoded({ extended: true }));
 // connect to database
 connectToDB();
 
-app.use("/", tasks);
+app.use("/api/v1/tasks", tasks);
 
 module.exports = app;
